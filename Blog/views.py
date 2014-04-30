@@ -15,4 +15,4 @@ def postByTag(request, tag):
 
 def postPage(request, postID):
     post = get_object_or_404(Post, pk=postID)
-    return render(request, 'Blog/post.html', {'post': post})
+    return render(request, 'Blog/postPage.html', {'post': post})

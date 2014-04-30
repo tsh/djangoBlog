@@ -1,5 +1,5 @@
 <ul>
 {% for k, v in tagsQuantity.items %}
-    <li>{{ k }} <span>{{ v }}</span></li>
+    <li><a href="{% url 'postByTag' k %}">{{ k }}</a><span>{{ v }}</span></li>
 {% endfor %}
 </ul>
