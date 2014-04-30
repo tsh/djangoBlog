@@ -48,6 +48,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_DIRS = (
+    BASE_DIR + '/templates/',
+)
+
 ROOT_URLCONF = 'djangoBlog.urls'
 
 WSGI_APPLICATION = 'djangoBlog.wsgi.application'
