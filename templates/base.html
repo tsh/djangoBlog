@@ -4,6 +4,7 @@
     <title>{% block title %}djangoBlog{% endblock %}</title>
 </head>
 <body>
-{% block content %}{% endblock %}
+    <h1><a href="{% url 'index' %}">djangoBlog</a></h1>
+    {% block content %}{% endblock %}
 </body>
 </html>

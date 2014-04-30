@@ -15,3 +15,14 @@ class Tag(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    @classmethod
+    def getTagsWithQuantity(cls):
+        tags = cls.objects.all()
+        tagsQuantity = {}
+        for tag in tags:
+            if tag not in tagsQuantity:
+                tagsQuantity[tag] = 1
+            else:
+                tagsQuantity[tag] += 1
+        return tagsQuantity
