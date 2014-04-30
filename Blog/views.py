@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Post, Tag
 
@@ -12,3 +12,7 @@ def postByTag(request, tag):
     posts = tag.post_set.all()
     tq = Tag.getTagsWithQuantity()
     return render(request, 'Blog/listOfPosts.html', {'posts':posts,'tagsQuantity': tq})
+
+def postPage(request, postID):
+    post = get_object_or_404(Post, pk=postID)
+    return render(request, 'Blog/post.html', {'post': post})
