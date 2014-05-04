@@ -49,7 +49,11 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
-    BASE_DIR + '/templates/',
+    os.path.join(BASE_DIR ,'templates'),
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
 )
 
 ROOT_URLCONF = 'djangoBlog.urls'
