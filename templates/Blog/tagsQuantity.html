@@ -1,7 +1,12 @@
-<div class="row">
-    <ul class="col-lg-6">
-    {% for k, v in tagsQuantity.items %}
-        <li class="list-group-item"><a href="{% url 'postByTag' k %}">{{ k }}</a><span class="badge">{{ v }}</span></li>
-    {% endfor %}
-    </ul>
+<div class="well">
+    <h4>Tags:</h4>
+    <div class="row">
+        <div class="col-lg-12"
+            <ul class="list-unstyled">
+            {% for k, v in tagsQuantity.items %}
+                <li class="list-group-item"><a href="{% url 'postByTag' k %}">{{ k }}</a><span class="badge">{{ v }}</span></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
