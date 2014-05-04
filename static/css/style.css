@@ -1,0 +1,8 @@
+.listOfTags {
+    margin: auto;
+    list-style-type: none;
+}
+
+.listOfTags li {
+    display: inline;
+}

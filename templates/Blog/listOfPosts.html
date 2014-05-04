@@ -4,8 +4,11 @@
 {% for post in posts %}
 <article>
     <h2><a href="{% url 'postPage' post.id %}"> {{ post.title }} </a></h2>
+    <hr>
+    <p><span class="glyphicon glyphicon-time"></span> Posted on: {{ post.created }}</p>
+    <hr>
     <p>{{ post.body }}</p>
-        <ul>
+        <ul class="listOfTags">
         {% for tag in post.tags.all %}
             <li><a href="{% url 'postByTag' tag %}">{{ tag }}</a></li>
         {% endfor %}

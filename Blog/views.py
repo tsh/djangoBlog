@@ -17,6 +17,7 @@ def postByTag(request, tag):
     return render(request, 'Blog/listOfPosts.html', {'posts':posts,'tagsQuantity': tq})
 
 def postPage(request, postID):
+    tq = Tag.getTagsWithQuantity()
     post = get_object_or_404(Post, pk=postID)
     comments = Comment.objects.all().filter(post=post)
     form = CommentForm()
@@ -27,4 +28,5 @@ def postPage(request, postID):
                     body = form.cleaned_data['body'],
                     post=post,
                     created=datetime.datetime.now()).save()
-    return render(request, 'Blog/postPage.html', {'post': post, 'comments':comments, 'form':form})
+    return render(request, 'Blog/postPage.html', {'post': post, 'comments':comments, 'form':form,
+                                                  'tagsQuantity': tq})
