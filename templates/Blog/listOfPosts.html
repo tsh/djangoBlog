@@ -10,7 +10,8 @@
     <p>{{ post.body }}</p>
         <ul class="listOfTags">
         {% for tag in post.tags.all %}
-            <li><a href="{% url 'postByTag' tag %}">{{ tag }}</a></li>
+                        {% comment %}Запятая после всех слов, кроме последнего{% endcomment %}
+            <li><a href="{% url 'postByTag' tag %}">{{ tag }}{% if not forloop.last %},{% endif %}</a></li>
         {% endfor %}
         </ul>
 </article>

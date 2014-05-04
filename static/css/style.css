@@ -2,6 +2,10 @@ body {
     margin-top: 100px;
 }
 
+article{
+    margin-bottom: 70px;
+}
+
 .listOfTags {
     margin: auto;
     list-style-type: none;

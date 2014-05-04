@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'post/(?P<postID>\d+)/', Blog.views.postPage, name='postPage'),
-    url(r'tag/(?P<tag>\w+)/', Blog.views.postByTag, name='postByTag'),
+    url(r'tag/(?P<tag>[\w\ ]+)/', Blog.views.postByTag, name='postByTag'),
     url(r'^$', Blog.views.index, name='index'),
 )
