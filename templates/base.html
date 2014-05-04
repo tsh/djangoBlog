@@ -2,25 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
     <title>{% block title %}djangoBlog{% endblock %}</title>
 </head>
 <body>
-    <h1><a href="{% url 'index' %}">djangoBlog</a></h1>
-
+    {% include "nav.html" %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-            {% block content %}{% endblock %}
-            </div>
-            <div class="col-lg-4">
-            {% include "Blog/tagsQuantity.html" %}
-            </div>
+            <div class="col-lg-8">{% block content %}{% endblock %}</div>
+            <div class="col-lg-4">{% include "Blog/tagsQuantity.html" %}</div>
         </div>
     </div>
-
 </body>
 </html>
