@@ -8,7 +8,7 @@ from .forms import CommentForm
 def index(request):
     posts = Post.objects.all().order_by('created')[:10]
     tq = Tag.getTagsWithQuantity()
-    return render(request, 'Blog/listOfPosts.html', {'posts':posts, 'tagsQuantity': tq})
+    return render(request, 'Blog/listOfPosts.html', {'posts':posts, 'tagsQuantity':tq})
 
 def postByTag(request, tag):
     tag = Tag.objects.get(name=tag)

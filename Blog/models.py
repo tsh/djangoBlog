@@ -20,15 +20,15 @@ class Tag(models.Model):
         return self.name
 
     @classmethod
-    def getTagsWithQuantity(cls):
+    def getTagsWithQuantity(cls, reverse=True):
+        """Returns sorted list of tuples, in format: (name of tag, number of occurrences)"""
         tags = cls.objects.all()
         tagsQuantity = {}
         for tag in tags:
-            if tag not in tagsQuantity:
-                tagsQuantity[tag] = 1
-            else:
-                tagsQuantity[tag] += 1
-        return tagsQuantity
+            tagPosts = tag.post_set.all()
+            tagsQuantity[tag.name] = len(tagPosts)
+        sortedTags=sorted(tagsQuantity.items(), key= lambda x:x[1], reverse=reverse)
+        return sortedTags
 
 
 class Comment(models.Model):
